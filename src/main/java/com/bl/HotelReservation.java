@@ -33,9 +33,9 @@ public class HotelReservation {
 
         HotelReservation reservation = new HotelReservation();
 
-        Hotel hotel1 = new Hotel("Lakewood", 150, 200);
-        Hotel hotel2 = new Hotel("BridgeWood", 200, 250);
-        Hotel hotel3 = new Hotel("RidgeWood", 250, 300);
+        Hotel hotel1 = new Hotel("Lakewood", 100, 110,90);
+        Hotel hotel2 = new Hotel("BridgeWood", 140, 150,50);
+        Hotel hotel3 = new Hotel("RidgeWood", 200, 220,150);
 
 
         hotel1.setPrices("10-08-2020", 220);

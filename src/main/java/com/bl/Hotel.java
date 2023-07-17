@@ -6,22 +6,32 @@ import java.util.Map;
 public class Hotel {
     private String Name;
     private  double RegularPrice;
-
-    public double getPrice() {
-        return Price;
-    }
-
-    public void setPrice(double price) {
-        Price = price;
-    }
-
-    private double Price;
-
     private Map<String, Double> prices;
-    public Hotel(String Name, double RegularPrice, double price){
+
+    private double WeekDayPrice;
+
+    public double getWeekDayPrice() {
+        return WeekDayPrice;
+    }
+
+    public void setWeekDayPrice(double weekDay) {
+        WeekDayPrice = weekDay;
+    }
+
+    public double getWeekendDay() {
+        return WeekendDayPrice;
+    }
+
+    public void setWeekendDay(double weekendDay) {
+        WeekendDayPrice = weekendDay;
+    }
+
+    private double WeekendDayPrice;
+    public Hotel(String Name, double RegularPrice, double weekDay, double weekendDay){
         this.Name = Name;
-        this.Price = price;
         this.RegularPrice = RegularPrice;
+        this.WeekDayPrice = weekDay;
+        this.WeekendDayPrice = weekendDay;
         this.prices = new HashMap<>();
     }
 
