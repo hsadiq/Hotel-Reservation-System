@@ -1,5 +1,7 @@
 package com.bl;
 
+import java.time.LocalDate;
+import java.time.format.DateTimeFormatter;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -66,5 +68,18 @@ public class Hotel {
 
     public double getPricesForDates(String date) {
         return prices.getOrDefault(date, 0.0);
+    }
+
+    public double getTotalPrice(String startDate, String endDate) {
+        double totalPrice = 0.0;
+        LocalDate start = LocalDate.parse(startDate, DateTimeFormatter.ofPattern("ddMMMyyyy"));
+        LocalDate end = LocalDate.parse(endDate, DateTimeFormatter.ofPattern("ddMMMyyyy"));
+        LocalDate date = start;
+        while (!date.isAfter(end)) {
+            double price = getPricesForDates(date.format(DateTimeFormatter.ofPattern("dd-MM-yyyy")));
+            totalPrice += price;
+            date = date.plusDays(1);
+        }
+        return totalPrice;
     }
 }
