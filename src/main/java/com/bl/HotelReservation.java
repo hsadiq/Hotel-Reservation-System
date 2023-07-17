@@ -18,7 +18,7 @@ public class HotelReservation {
         Hotel cheapestHotel = null;
         double cheapestPrice = Double.MAX_VALUE;
 
-        for (Hotel hotel:hotels) {
+        for (Hotel hotel: hotels) {
             double price = hotel.getPricesForDates(date);
             if (price < cheapestPrice){
                 cheapestPrice = price;
@@ -38,20 +38,20 @@ public class HotelReservation {
         Hotel hotel3 = new Hotel("RidgeWood", 200, 220,150);
 
 
-        hotel1.setPrices("10-08-2020", 220);
+        hotel1.setPrices("12-08-2020", 200);
         hotel2.setPrices("11-08-2020", 300);
-        hotel3.setPrices("12-08-2020", 400);
+        hotel3.setPrices("12-08-2020", 200);
 
         reservation.addHotel(hotel1);
         reservation.addHotel(hotel2);
         reservation.addHotel(hotel3);
 
-        String inputDate = "10-08-2020";
+        String inputDate = "12-08-2020";
 
         Hotel cheapestHotel = reservation.findCheapestHotel(inputDate);
 
         if (cheapestHotel != null){
-            System.out.println("Cheapest Hotel for Date: " + inputDate + " is" + "\t" + cheapestHotel.getName());
+            System.out.println("Cheapest Hotel for Date: " + inputDate + " is" + "\t" + cheapestHotel.getName() + " For Price " + cheapestHotel.getWeekDayPrice());
         }else {
             System.out.println("NO Hotel Available for Date: " + inputDate);
         }
