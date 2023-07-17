@@ -4,58 +4,67 @@ import java.util.HashMap;
 import java.util.Map;
 
 public class Hotel {
-    private String Name;
-    private  double RegularPrice;
+    private String name;
+    private double regularPrice;
     private Map<String, Double> prices;
+    private double weekDayPrice;
+    private double weekendDayPrice;
+    private int rating;
 
-    private double WeekDayPrice;
-
-    public double getWeekDayPrice() {
-        return WeekDayPrice;
-    }
-
-    public void setWeekDayPrice(double weekDay) {
-        WeekDayPrice = weekDay;
-    }
-
-    public double getWeekendDay() {
-        return WeekendDayPrice;
-    }
-
-    public void setWeekendDay(double weekendDay) {
-        WeekendDayPrice = weekendDay;
-    }
-
-    private double WeekendDayPrice;
-    public Hotel(String Name, double RegularPrice, double weekDay, double weekendDay){
-        this.Name = Name;
-        this.RegularPrice = RegularPrice;
-        this.WeekDayPrice = weekDay;
-        this.WeekendDayPrice = weekendDay;
+    public Hotel(String name, double regularPrice, double weekDayPrice, double weekendDayPrice, int rating) {
+        this.name = name;
+        this.regularPrice = regularPrice;
+        this.weekDayPrice = weekDayPrice;
+        this.weekendDayPrice = weekendDayPrice;
+        this.rating = rating;
         this.prices = new HashMap<>();
     }
 
     public String getName() {
-        return Name;
+        return name;
     }
 
     public void setName(String name) {
-        Name = name;
+        this.name = name;
     }
 
     public double getRegularPrice() {
-        return RegularPrice;
+        return regularPrice;
     }
 
     public void setRegularPrice(double regularPrice) {
-        RegularPrice = regularPrice;
+        this.regularPrice = regularPrice;
     }
 
-    public void setPrices(String date, double price){
+    public double getWeekDayPrice() {
+        return weekDayPrice;
+    }
+
+    public void setWeekDayPrice(double weekDayPrice) {
+        this.weekDayPrice = weekDayPrice;
+    }
+
+    public double getWeekendDayPrice() {
+        return weekendDayPrice;
+    }
+
+    public void setWeekendDayPrice(double weekendDayPrice) {
+        this.weekendDayPrice = weekendDayPrice;
+    }
+
+    public int getRating() {
+        return rating;
+    }
+
+    public void setRating(int rating) {
+        this.rating = rating;
+    }
+
+    public void setPrices(String date, double price) {
         prices.put(date, price);
     }
 
-    public double getPricesForDates(String date){
-        return prices.getOrDefault(date,0.0);
+    public double getPricesForDates(String date) {
+        return prices.getOrDefault(date, 0.0);
     }
 }
